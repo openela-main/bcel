@@ -1,6 +1,6 @@
 Name:           bcel
 Version:        6.4.1
-Release:        9%{?dist}
+Release:        11%{?dist}
 Summary:        Byte Code Engineering Library
 License:        ASL 2.0
 URL:            http://commons.apache.org/proper/commons-bcel/
@@ -37,7 +37,7 @@ This package provides %{summary}.
 
 %prep
 %setup -q -n %{name}-%{version}-src
-%patch1 -p1
+%patch -P 1 -p1
 
 %pom_remove_plugin :maven-source-plugin
 
@@ -58,6 +58,12 @@ This package provides %{summary}.
 %license LICENSE.txt NOTICE.txt
 
 %changelog
+* Thu Nov 21 2024 Marián Konček <mkoncek@redhat.com> - 6.4.1-11
+- Fix patch usage
+
+* Tue Nov 19 2024 Marián Konček <mkoncek@redhat.com> - 6.4.1-10
+- Rebuild with regenerated Requires on Java
+
 * Thu Dec 01 2022 Mikolaj Izdebski <mizdebsk@redhat.com> - 6.4.1-9
 - Fix arbitrary bytecode produced via out-of-bounds writing
 - Resolves: CVE-2022-42920
