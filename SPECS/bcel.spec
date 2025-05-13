@@ -1,10 +1,11 @@
 Name:           bcel
 Version:        6.4.1
-Release:        11%{?dist}
+Release:        13%{?dist}
 Summary:        Byte Code Engineering Library
 License:        ASL 2.0
 URL:            http://commons.apache.org/proper/commons-bcel/
 BuildArch:      noarch
+ExclusiveArch:  aarch64 ppc64le s390x x86_64 noarch
 
 Source0:        http://archive.apache.org/dist/commons/bcel/source/bcel-%{version}-src.tar.gz
 
@@ -58,6 +59,12 @@ This package provides %{summary}.
 %license LICENSE.txt NOTICE.txt
 
 %changelog
+* Sat Nov 23 2024 Marián Konček <mkoncek@redhat.com> - 6.4.1-13
+- Add noarch to ExclusiveArch
+
+* Fri Nov 22 2024 Marián Konček <mkoncek@redhat.com> - 6.4.1-12
+- Disable building on i686
+
 * Thu Nov 21 2024 Marián Konček <mkoncek@redhat.com> - 6.4.1-11
 - Fix patch usage
 
